@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from requests import Response
-from rest_framework import generics
+from rest_framework import generics, request
 from rest_framework.decorators import api_view
 from rest_framework.reverse import reverse
 
@@ -25,3 +25,6 @@ class UIDetail(generics.RetrieveUpdateDestroyAPIView):
 #     serializer_class = AISerializer
 
 
+class updateJira(generics.RetrieveAPIView):
+    print(request.data)
+    pass

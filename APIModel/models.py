@@ -6,9 +6,10 @@ class UIModel(models.Model):
     request_id = models.IntegerField(primary_key=True)
     created = models.DateTimeField(auto_now_add=True)
     inputText = models.TextField(max_length=2000, blank=True, default='')
-    inputType = models.CharField(max_length=10, blank=True,default="text")# or file
+    inputType = models.CharField(max_length=10, default="text")# or file
     keywords = models.TextField(max_length=200, blank=True)
-    totalScenarios = models.IntegerField(blank=True, default=0)
+    totalScenarios = models.IntegerField(blank=True, null=True, default=0)
+
     # testCases = ArrayField(models.CharField(max_length=200, blank=True))
 
     class Meta:
